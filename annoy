@@ -1,0 +1,15 @@
+def annoy(number):
+    from time import localtime
+    from pywhatkit import sendwhatmsg
+    t = localtime()
+    a = 'this is an automated message sent using python'
+    x = t[3]
+    y = t[4] + 1
+    while True:
+        sendwhatmsg(str(number), a, x, y)
+        y += 1
+        if y > 59:
+            x += 1
+            y = 0
+        if x > 23:
+            x = 0
